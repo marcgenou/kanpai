@@ -13,4 +13,5 @@ bundle install
 mysql -u root -pkanpai -e "create database kanpai_development"
 mysql -u root -pkanpai -e "create database kanpai_test"
 mysql -u root -pkanpai -e "create database kanpai_production"
-rails server -b 0.0.0.0
+rake db:migrate
+nohup rails server -b 0.0.0.0 &

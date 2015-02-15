@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @experience.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @experience.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @experience.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @experience.image_url %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @experience.price %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @experience.season %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @experience.date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @experience.duration %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @experience.tags %>
+</p>
+
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', experiences_path %>
