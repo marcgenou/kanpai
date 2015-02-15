@@ -20,7 +20,19 @@
 
   <tbody>
     <% @experiences.each do |experience| %>
-      <tr>
+      <tr class='<%= cycle('list_line_odd', 'list_line_even') %>'>
+    <td>
+      <%= image_tag(experience.image_url, class: 'list_image') %>
+    </td>
+ 
+    <td class="list_description">
+      <dl>
+        <dt><%= experience.title %></dt>
+        <dd><%= truncate(strip_tags(experience.description),
+               length: 80) %></dd>
+      </dl>
+    </td>
+
         <td><%= experience.title %></td>
         <td><%= experience.category %></td>
         <td><%= experience.description %></td>
@@ -30,9 +42,12 @@
         <td><%= experience.date %></td>
         <td><%= experience.duration %></td>
         <td><%= experience.tags %></td>
-        <td><%= link_to 'Show', experience %></td>
-        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="list_actions">
+      <%= link_to 'Show', experience %><br/>
+      <%= link_to 'Edit', edit_experience_path(experience) %><br/>
+      <%= link_to 'Destroy', experience, method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </td>
       </tr>
     <% end %>
   </tbody>

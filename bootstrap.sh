@@ -9,6 +9,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 apt-get install -y ruby2.2 ruby2.2-dev curl git libmysqlclient-dev mysql-server nodejs apache2
 gem install rails --version 4.2.0 --no-ri --no-rdoc
 cd /vagrant/kanpai
+gem pristine --all
 bundle install
 mysql -u root -pkanpai -e "create database kanpai_development"
 mysql -u root -pkanpai -e "create database kanpai_test"
