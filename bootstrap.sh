@@ -11,8 +11,8 @@ gem install rails --version 4.2.0 --no-ri --no-rdoc
 cd /vagrant/kanpai
 gem pristine --all
 bundle install
-mysql -u root -pkanpai -e "create database kanpai_development"
-mysql -u root -pkanpai -e "create database kanpai_test"
-mysql -u root -pkanpai -e "create database kanpai_production"
-rake db:migrate
+#mysql -u root -pkanpai -e "create database kanpai_development"
+#mysql -u root -pkanpai -e "create database kanpai_test"
+#mysql -u root -pkanpai -e "create database kanpai_production"
+rake db:setup
 nohup rails server -b 0.0.0.0 &
