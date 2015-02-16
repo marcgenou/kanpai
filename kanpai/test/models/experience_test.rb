@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ExperienceTest < ActiveSupport::TestCase
-	test "experience attributes must not be empty" do 
+	fixtures :experiences
+  test "experience attributes must not be empty" do 
 		experience = Experience.new
 		assert experience.invalid?
 		assert experience.errors[:title].any?
@@ -50,5 +51,14 @@ class ExperienceTest < ActiveSupport::TestCase
     bad.each do |name|
       assert new_experience(name).invalid?, "#{name} shouldn't be valid"
     end
+  end
+
+  test "product is not valid without a unique title" do 
+    experience = Experience.new(title: experiences(:highlands).title,
+     description: "yyy" ,
+     price: 1,
+     image_url: "fred.gif" )
+    assert experience.invalid?
+    assert_equal [ "has already been taken" ], experience.errors[:title]
   end
 end

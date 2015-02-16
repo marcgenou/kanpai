@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  category: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
-  season: MyString
-  date: 2015-02-15
-  duration: MyString
-  tags: MyString
+highlands:
+  title: Walking Highlands
+  category: trekking
+  description: Trekking around Scotland
+  image_url: Scotland.jpg
+  price: 550
+  season: summer
+  date: 2015-06-25
+  duration: one week
+  tags: "scotland, trekking, hiking"
 
-two:
-  title: MyString
-  category: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
-  season: MyString
-  date: 2015-02-15
-  duration: MyString
-  tags: MyString
+tokyo:
+  title: "Tokyo: My first adventure"
+  category: tourism
+  description: First visit to Tokyo
+  image_url: Tokyo.jpg
+  price: 2000
+  season: spring
+  date: 2015-04-05
+  duration: one week
+  tags: "tokyo, tourism"
