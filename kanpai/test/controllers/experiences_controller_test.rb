@@ -3,6 +3,13 @@ require 'test_helper'
 class ExperiencesControllerTest < ActionController::TestCase
   setup do
     @experience = experiences(:one)
+    @update = {
+      title: 'Lorem Ipsum',
+      category: 'wololo',
+      description: 'Wibbles are fun',
+      image_url: 'lorem.jpg',
+      price: 19.95
+    }
   end
 
   test "should get index" do
@@ -18,7 +25,7 @@ class ExperiencesControllerTest < ActionController::TestCase
 
   test "should create experience" do
     assert_difference('Experience.count') do
-      post :create, experience: { category: @experience.category, date: @experience.date, description: @experience.description, duration: @experience.duration, image_url: @experience.image_url, price: @experience.price, season: @experience.season, tags: @experience.tags, title: @experience.title }
+      post :create, experience: @update
     end
 
     assert_redirected_to experience_path(assigns(:experience))
@@ -35,7 +42,7 @@ class ExperiencesControllerTest < ActionController::TestCase
   end
 
   test "should update experience" do
-    patch :update, id: @experience, experience: { category: @experience.category, date: @experience.date, description: @experience.description, duration: @experience.duration, image_url: @experience.image_url, price: @experience.price, season: @experience.season, tags: @experience.tags, title: @experience.title }
+    patch :update, id: @experience, experience: @update
     assert_redirected_to experience_path(assigns(:experience))
   end
 
