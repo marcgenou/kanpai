@@ -1,0 +1,30 @@
+<% if notice %> 
+ <p id= "notice" > <%= notice %> </p> 
+ 
+ <% end %> 
+ 
+
+ 
+ <h1> Your Pragmatic Catalog </h1> 
+ 
+
+ 
+ <% @experiences.each do |experience| %> 
+ 
+ <div class= "entry" > 
+ 
+ <%= image_tag(experience.image_url) %> 
+ 
+ <h3> <%= experience.title %> </h3> 
+ 
+ <%= sanitize(experience.description) %> 
+ 
+ <div class= "price_line" > 
+ 
+ <span class= "price" > <%= experience.price %> </span> 
+ 
+ </div> 
+ 
+ </div> 
+ 
+ <% end %>
