@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ExperiencesControllerTest < ActionController::TestCase
   setup do
-    @experience = experiences(:one)
+    @experience = experiences(:highlands)
     @update = {
       title: 'Lorem Ipsum',
       category: 'wololo',

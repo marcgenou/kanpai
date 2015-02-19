@@ -45,5 +45,25 @@
   <%= @experience.tags %>
 </p>
 
+<p>
+  <strong>Address:</strong>
+  <%= @experience.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @experience.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @experience.longitude %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@experience.latitude}%2C#{@experience.longitude}" %>
+</p>
+
 <%= link_to 'Edit', edit_experience_path(@experience) %> |
 <%= link_to 'Back', experiences_path %>

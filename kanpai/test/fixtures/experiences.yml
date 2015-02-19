@@ -10,6 +10,7 @@ highlands:
   date: 2015-06-25
   duration: one week
   tags: "scotland, trekking, hiking"
+  address: "Inverness"
 
 tokyo:
   title: "Tokyo: My first adventure"
@@ -21,3 +22,4 @@ tokyo:
   date: 2015-04-05
   duration: one week
   tags: "tokyo, tourism"
+  address: "Tokyo"
