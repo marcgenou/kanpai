@@ -1,11 +1,5 @@
 Rails.application.configure do
 
-class ActionDispatch::Request
-  def remote_ip
-    "84.34.156.155" # fake ip for example                                                                                                                                                                                                                                                                                    
-  end
-end
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

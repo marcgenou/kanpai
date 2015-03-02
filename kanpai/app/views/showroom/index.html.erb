@@ -1,31 +1,21 @@
 <% if notice %> 
  <p id= "notice" > <%= notice %> </p> 
- 
  <% end %> 
- 
-
- 
  <h1> Your Pragmatic Catalog </h1> 
- 
-
- 
  <% @experiences.each do |experience| %> 
- 
- <div class= "entry" > 
- 
- <%= image_tag(experience.image_url) %> 
- 
- <h3> <%= experience.title %> </h3> 
- 
- <%= sanitize(experience.description) %> 
- 
- <div class= "price_line" > 
- 
- <span class= "price" > <%= number_to_currency(experience.price) %> </span> 
- 
- </div> 
- 
- </div>
-<strong><%= request.location %></strong>
-
+	 <div class= "entry" > 
+		 <%= image_tag(experience.image_url) %> 
+		 <h3> <%= experience.title %> </h3> 
+		 <%= sanitize(experience.description) %> 
+		 <div class= "price_line" > 
+			 <span class= "price" > <%= number_to_currency(experience.price) %> </span> 
+		 </div> 
+	 </div>
+<!-- 	 <strong><%= request.location.inspect %></strong>
+ -->	 
+ <strong><%= request.location.address %></strong>
+<!--  <strong><%= request.location.city %></strong>
+ <strong><%= request.location.state %></strong>
+ <strong><%= request.location.country %></strong> -->
+ <dd><%= text_field :city, :placeholder => request.location.city %></dd>
 <% end %>

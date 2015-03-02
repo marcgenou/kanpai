@@ -1,13 +1,7 @@
 class ShowroomController < ApplicationController
   def index
+  env['HTTP_X_REAL_IP'] = '83.56.16.252' if Rails.env.development?
+  location = request.location
   @experiences = Experience.order(:title)
-  end
-
-  def lookup_ip_location
-    if Rails.env.development?
-      Geocoder.search(request.remote_ip).first.country
-    else
-      request.location
-    end
   end
 end
