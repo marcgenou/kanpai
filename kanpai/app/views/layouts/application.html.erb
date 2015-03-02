@@ -6,7 +6,17 @@
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- <label id="code.jlt"/> -->
   <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
+
+        <script>
+            $(function () {
+                $("#example").tilesGallery({
+                    tileMinHeight: 200
+                });
+            });            
+        </script>
+
 </head>
+
 <body class="<%= controller.controller_name %>">
   <div id="banner">
     <%= image_tag("logo.png") %>
