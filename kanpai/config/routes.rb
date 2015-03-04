@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'step_distance/index'
+
   get 'showroom/index'
 
   resources :experiences
