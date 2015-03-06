@@ -17,8 +17,8 @@
 <!--  <strong><%= request.location.city %></strong>
  <strong><%= request.location.state %></strong>
  <strong><%= request.location.country %></strong> -->
-  <%= form_tag("/step_distance/index", method: :get) do %>
-  <%= text_field_tag :city, nil, :placeholder => request.location.city %>
+<%= form_tag("/step_distance/index", method: :get) do %>
+  <%= text_field_tag :city_name, nil, :placeholder => request.location.city %>
   <%= submit_tag 'Find experiences' %>
 <% end %>
 
