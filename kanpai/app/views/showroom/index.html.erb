@@ -17,12 +17,9 @@
 <!--  <strong><%= request.location.city %></strong>
  <strong><%= request.location.state %></strong>
  <strong><%= request.location.country %></strong> -->
- <%= text_field :city, nil, :placeholder => request.location.city %>
- <%= link_to "Find experiences", step_distance_index_path %>
-
- <%= form_tag({:controller=>"step_distance", :action=>"index"}, method: :get) do %>
+  <%= form_tag("/step_distance/index", method: :get) do %>
   <%= text_field_tag :city, nil, :placeholder => request.location.city %>
-  <%= submit_tag 'Find experiences', city: nil %>
+  <%= submit_tag 'Find experiences' %>
 <% end %>
 
         <div id="example" class="tiles">
