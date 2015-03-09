@@ -15,6 +15,18 @@
             });            
         </script>
 
+  <script>
+    (function($){
+      $(function(){
+        $('select').selectToAutocomplete();
+        // $('form').submit(function(){
+        //   alert( $(this).serialize() );
+        //   return false;
+        // });
+      });
+    })(jQuery);
+  </script>
+
 </head>
 
 <body class="<%= controller.controller_name %>">

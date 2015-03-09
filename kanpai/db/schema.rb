@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219165257) do
+ActiveRecord::Schema.define(version: 20150309200902) do
 
   create_table "experiences", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20150219165257) do
     t.string   "address",     limit: 255
     t.float    "latitude",    limit: 24
     t.float    "longitude",   limit: 24
+  end
+
+  create_table "world_cities", force: :cascade do |t|
+    t.string   "country",    limit: 255
+    t.string   "city",       limit: 255
+    t.string   "accentcity", limit: 255
+    t.integer  "region",     limit: 4
+    t.integer  "population", limit: 4
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

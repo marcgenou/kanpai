@@ -5,7 +5,7 @@ class StepDistanceController < ApplicationController
   	if params[:city_name].blank?
   		@city_name = request.location.city
   	else
-  		@city_name ||= params[:city_name]
+  		@city_name = params[:city_name]
   	end
   	@locations = Experience.near(@city_name, 20, :units => :km)
   end
