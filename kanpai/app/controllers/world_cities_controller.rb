@@ -69,6 +69,6 @@ class WorldCitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def world_city_params
-      params.require(:world_city).permit(:country, :city, :accentcity, :region, :population, :latitude, :longitude)
+      params.require(:world_city).permit(:geonameid, :name, :asciiname, :alternatenames, :latitude, :longitude, :feature_class, :feature_code, :country_code, :cc2, :admin1_code, :admin2_code, :admin3_code, :admin4_code, :population, :elevation, :dem, :timezone, :modification_date)
     end
 end

@@ -22,6 +22,8 @@
   <%= submit_tag 'Find experiences' %>
 <% end %>
 
+<%= select_tag "people", options_from_collection_for_select(@world_cities, "id", "name") %>
+
 
   <form>
     <select name="Country" id="country-selector" autofocus="autofocus" autocorrect="off" autocomplete="off">

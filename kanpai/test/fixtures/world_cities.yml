@@ -1,19 +1,43 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  country: MyString
-  city: MyString
-  accentcity: MyString
-  region: 1
-  population: 1
+  geonameid: 1
+  name: MyString
+  asciiname: MyString
+  alternatenames: MyText
   latitude: 1.5
   longitude: 1.5
+  feature_class: MyString
+  feature_code: MyString
+  country_code: MyString
+  cc2: MyString
+  admin1_code: MyString
+  admin2_code: MyString
+  admin3_code: MyString
+  admin4_code: MyString
+  population: 1
+  elevation: 1
+  dem: 1
+  timezone: MyString
+  modification_date: 2015-03-10
 
 two:
-  country: MyString
-  city: MyString
-  accentcity: MyString
-  region: 1
-  population: 1
+  geonameid: 1
+  name: MyString
+  asciiname: MyString
+  alternatenames: MyText
   latitude: 1.5
   longitude: 1.5
+  feature_class: MyString
+  feature_code: MyString
+  country_code: MyString
+  cc2: MyString
+  admin1_code: MyString
+  admin2_code: MyString
+  admin3_code: MyString
+  admin4_code: MyString
+  population: 1
+  elevation: 1
+  dem: 1
+  timezone: MyString
+  modification_date: 2015-03-10

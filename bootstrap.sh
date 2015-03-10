@@ -11,8 +11,8 @@ gem install rails --version 4.2.0 --no-ri --no-rdoc
 cd /vagrant/kanpai
 gem pristine --all
 bundle install
-#mysql -u root -pkanpai -e "create database kanpai_development"
-#mysql -u root -pkanpai -e "create database kanpai_test"
-#mysql -u root -pkanpai -e "create database kanpai_production"
+#mysql -u root -pkanpai -e "create database kanpai_development CHARACTER SET utf8 COLLATE utf8_general_ci;"
+#mysql -u root -pkanpai -e "create database kanpai_test CHARACTER SET utf8 COLLATE utf8_general_ci;"
+#mysql -u root -pkanpai -e "create database kanpai_production CHARACTER SET utf8 COLLATE utf8_general_ci;"
 rake db:setup
 nohup rails server -b 0.0.0.0 &
