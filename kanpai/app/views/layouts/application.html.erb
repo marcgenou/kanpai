@@ -6,27 +6,7 @@
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- <label id="code.jlt"/> -->
   <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
-
-        <script>
-            $(function () {
-                $("#example").tilesGallery({
-                    tileMinHeight: 250
-                });
-            });            
-        </script>
-
-  <script>
-    (function($){
-      $(function(){
-        $('select').selectToAutocomplete();
-        // $('form').submit(function(){
-        //   alert( $(this).serialize() );
-        //   return false;
-        // });
-      });
-    })(jQuery);
-  </script>
-
+      <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 </head>
 
 <body class="<%= controller.controller_name %>">
