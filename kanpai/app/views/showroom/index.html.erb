@@ -1,7 +1,6 @@
 <% if notice %> 
  <p id= "notice" > <%= notice %> </p> 
  <% end %> 
- <h1> Your Pragmatic Catalog </h1> 
  <div id="example" class= "tiles"> 
  <% @experiences.each do |experience| %> 
 		 <%= link_to '#' do %>hiii<%= image_tag(experience.image_url) %>
@@ -9,23 +8,24 @@
  <% end %>
  </div>
  
-<!-- 	 <strong><%= request.location.inspect %></strong>
- -->	 
- <strong><%= request.location.address %></strong>
-<!--  <strong><%= request.location.city %></strong>
- <strong><%= request.location.state %></strong>
- <strong><%= request.location.country %></strong> -->
-<%= form_tag("/step_distance/index", method: :get) do %>
-  <%= text_field_tag :city_name, nil, :placeholder => request.location.city %>
-  <%= submit_tag 'Find experiences' %>
-<% end %>
+<div class="center jumbotron">
 
-    <div class="map_canvas"></div>
+ <h2><%= request.location.address %></h2>
+
+<%= form_tag("/step_distance/index", method: :get, :class => "form-horizontal") do %>
+<div class="form-group">
+  <%= text_field_tag :city_name, nil, :placeholder => request.location.city %>
+  <%= submit_tag 'Find experiences', class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
+</div>
+
+<!--    <div class="map_canvas"></div>
 
     <form>
       <input id="geocomplete" type="text" placeholder="Type in an address" value="Empire State Bldg" />
       <input id="find" type="button" value="find" />
-    </form>
+    </form> -->
 
 
 

@@ -6,26 +6,14 @@
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- <label id="code.jlt"/> -->
   <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
-      <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <%= render 'layouts/shim' %>
 </head>
 
-<body class="<%= controller.controller_name %>">
-  <div id="banner">
-    <%= image_tag("logo.png") %>
-    <%= @page_title || "Experiences" %><!-- <label id="code.depot.e.title"/> -->
-  </div>
-  <div id="columns">
-    <div id="side">
-      <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
-      </ul>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
-    <div id="main">
-      <%= yield %><!-- <label id="code.depot.e.include"/> -->
-    </div>
-  </div>
-</body>
+  </body>
 </html>
