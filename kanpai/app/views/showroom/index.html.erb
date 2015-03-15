@@ -2,12 +2,13 @@
  <p id= "notice" > <%= notice %> </p> 
  <% end %> 
  <h1> Your Pragmatic Catalog </h1> 
+ <div id="example" class= "tiles"> 
  <% @experiences.each do |experience| %> 
-	 <div id="example" class= "tiles"> 
-		 <%= image_tag(experience.image_url) %> 
-		 </div>
-  <% end %>
-
+		 <%= link_to '#' do %>hiii<%= image_tag(experience.image_url) %>
+     <% end %> 
+ <% end %>
+ </div>
+ 
 <!-- 	 <strong><%= request.location.inspect %></strong>
  -->	 
  <strong><%= request.location.address %></strong>

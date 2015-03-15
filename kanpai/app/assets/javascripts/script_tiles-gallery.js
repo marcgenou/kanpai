@@ -1,5 +1,5 @@
 $(function () {
                 $("#example").tilesGallery({
-                    tileMinHeight: 150
+                    tileMinHeight: 100
                 });
             });    
