@@ -12,14 +12,15 @@
 
  <h2><%= request.location.address %></h2>
 
-<%= form_tag("/step_distance/index", method: :get, :class => "form-horizontal") do %>
-<div class="form-group">
-  <%= text_field_tag :city_name, nil, :placeholder => request.location.city %>
-  <%= submit_tag 'Find experiences', class: "btn btn-lg btn-primary" %>
-  </div>
-<% end %>
 </div>
-
+<div class="row">
+  <div class="col-md-8 col-md-offset-4">
+  <%= form_tag("/step_distance/index", method: :get) do %>
+    <%= text_field_tag :city_name, nil, :class => "form-control", :placeholder => request.location.city %>
+    <%= submit_tag 'Find experiences', class: "btn btn-lg btn-primary" %>
+  <% end %>
+</div>
+</div>
 <!--    <div class="map_canvas"></div>
 
     <form>
