@@ -2,12 +2,32 @@
  <p id= "notice" > <%= notice %> </p> 
  <% end %> 
  <div id="example" class= "tiles"> 
- <% @experiences.each do |experience| %> 
-		 <%= link_to '#' do %>hiii<%= image_tag(experience.image_url) %>
-     <% end %> 
- <% end %>
- </div>
  
+<% for experience in @experiences.sample(20) %> 
+    <%= link_to experience do %>
+    <%= image_tag(experience.image_url) %>
+      <% end %> 
+<% end %>
+</div>
+
+<!--<% @experiences.each do |experience| %> 
+	<%= link_to experience do %>
+    <%= image_tag(experience.image_url) %>
+
+<div class="cuadro_intro_hover ">
+    <%= image_tag(experience.image_url) %>
+    <div class="caption">
+        <div class="blur"></div>
+        <div class="caption-text">
+            <h3><%= experience.title %></h3><%= experience.description %>
+        </div>
+    </div>
+</div>
+
+  <% end %> 
+ <% end %>
+ </div>-->
+
 <div class="center jumbotron">
 
  <h2><%= request.location.address %></h2>

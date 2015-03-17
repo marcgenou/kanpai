@@ -8,5 +8,7 @@ class StepDistanceController < ApplicationController
   		@city_name = params[:city_name]
   	end
   	@locations = Experience.near(@city_name, 20, :units => :km)
+    local = Experience.near(@city_name, 20, :units => :km)
+    @local_travel = local.sample
   end
 end
