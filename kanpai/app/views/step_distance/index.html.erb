@@ -1,58 +1,77 @@
-<h1>StepDistance#index</h1>
-<p>Find me in app/views/step_distance/index.html.erb</p>
-<!-- <strong><%= p @city_name.inspect %></strong>
-<strong><%= p @locations.inspect %></strong> -->
+<h1><%= @city_name %></h1>
 
-<h3>Nearby locations</h3>
+<!-- <h3>Nearby locations</h3>
 <ul>
 <% for location in @locations %>
   <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> kms)</li>
 <% end %>
-</ul>
+</ul> -->
 
-<div class="cuadro_intro_hover">
-	<%= image_tag(@local_travel.image_url) %>
-<div class="caption">
-	<div class="blur"></div>
-	<div class="caption-text">
-		<h3 style="padding:10px;"><%= p @local_travel.title %></h3>
-		<%= @local_travel.description %>
+<div class="row">
+  <div class="col-xs-6">
+	  <%= link_to @local_travel do %>
+	  <div class="cuadro_intro_hover">
+    <%= image_tag(@local_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @local_travel.title %></h3>
+					<%= @local_travel.description %><br>
+					<%= @local_travel.address %><br>
+					<%= @local_travel.distance.round(2) %> kms<br>
+					<%= @local_distance_price.round(2) + @local_travel.price %>€
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<br>
+		<%= link_to @continental_travel do %>
+		<div class="cuadro_intro_hover">
+		<%= image_tag(@continental_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @continental_travel.title %></h3>
+					<%= @continental_travel.description %><br>
+					<%= @continental_travel.address %><br>
+					<%= @continental_travel.distance.round(2) %> kms<br>
+					<%= @continental_distance_price.round(2) + @continental_travel.price %>€
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+  <div class="col-xs-6">
+	  <%= link_to @national_travel do %>
+	  <div class="cuadro_intro_hover">
+		<%= image_tag(@national_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @national_travel.title %></h3>
+					<%= @national_travel.description %><br>
+					<%= @national_travel.address %><br>
+					<%= @national_travel.distance.round(2) %> kms<br>
+					<%= @national_distance_price.round(2) + @national_travel.price %>€
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<br>
+	  <%= link_to @exotic_travel do %>
+		<div class="cuadro_intro_hover">
+		<%= image_tag(@exotic_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @exotic_travel.title %></h3>
+					<%= @exotic_travel.description %><br>
+					<%= @exotic_travel.address %><br>
+					<%= @exotic_travel.distance.round(2) %> kms<br>
+					<%= @exotic_distance_price.round(2) + @exotic_travel.price %>€
+				</div>
+			</div>
+		</div>
+		<% end %>
 	</div>
 </div>
-</div>
-
-<div class="cuadro_intro_hover">
-	<%= image_tag(@national_travel.image_url) %>
-<div class="caption">
-	<div class="blur"></div>
-	<div class="caption-text">
-		<h3 style="padding:10px;"><%= p @national_travel.title %></h3>
-		<%= @national_travel.description %>
-	</div>
-</div>
-</div>
-
-<div class="cuadro_intro_hover">
-	<%= image_tag(@continental_travel.image_url) %>
-<div class="caption">
-	<div class="blur"></div>
-	<div class="caption-text">
-		<h3 style="padding:10px;"><%= p @continental_travel.title %></h3>
-		<%= @continental_travel.description %>
-	</div>
-</div>
-</div>
-
-<div class="cuadro_intro_hover">
-	<%= image_tag(@exotic_travel.image_url) %>
-<div class="caption">
-	<div class="blur"></div>
-	<div class="caption-text">
-		<h3 style="padding:10px;"><%= p @exotic_travel.title %></h3>
-		<%= @exotic_travel.description %>
-	</div>
-</div>
-</div>
-
-
-

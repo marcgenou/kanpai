@@ -24,5 +24,16 @@ class StepDistanceController < ApplicationController
 
     @local_travel = local.sample
     
+
+    # #distance_price
+    # Rails.logger.info "================"
+    # p @local_travel.title
+    # p @city_name 
+
+
+    @local_distance_price = Geocoder::Calculations.distance_between(@city_name, @local_travel, :units => :km) * 0.55
+    @national_distance_price = Geocoder::Calculations.distance_between(@city_name, @national_travel, :units => :km) * 0.11 + 20
+    @continental_distance_price = Geocoder::Calculations.distance_between(@city_name, @continental_travel, :units => :km) * 0.09 +35
+    @exotic_distance_price = Geocoder::Calculations.distance_between(@city_name, @exotic_travel, :units => :km) * 0.07 + 110
   end
 end
