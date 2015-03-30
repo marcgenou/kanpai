@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :world_cities
-
   get 'step_distance/index'
 
   get 'showroom/index'
