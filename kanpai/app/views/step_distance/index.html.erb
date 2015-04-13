@@ -6,6 +6,9 @@
   <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> kms)</li>
 <% end %>
 </ul> -->
+<!--<div style="z-index:10000; position:absolute;">
+						<%= button_to 'Keep this one', line_items_path(experience_id: @local_travel), class: "btn btn-lg btn-primary" %>
+						</div>-->
 
 <div class="row">
   <div class="col-xs-6">
@@ -19,12 +22,13 @@
 					<%= @local_travel.description %><br>
 					<%= @local_travel.address %><br>
 					<%= @local_travel.distance.round(2) %> kms<br>
-					<%= @local_distance_price.round(2) + @local_travel.price %>€
+					<%= @local_distance_price.round(2) + @local_travel.price %>€					
 				</div>
 			</div>
 		</div>
 		<% end %>
-		<br>
+		<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel }%>
+		<br><br>
 		<%= link_to @continental_travel do %>
 		<div class="cuadro_intro_hover">
 		<%= image_tag(@continental_travel.image_url) %>
@@ -40,6 +44,7 @@
 			</div>
 		</div>
 		<% end %>
+		More continental travels
 	</div>
   <div class="col-xs-6">
 	  <%= link_to @national_travel do %>
@@ -57,7 +62,8 @@
 			</div>
 		</div>
 		<% end %>
-		<br>
+		More national travels
+		<br><br>
 	  <%= link_to @exotic_travel do %>
 		<div class="cuadro_intro_hover">
 		<%= image_tag(@exotic_travel.image_url) %>
@@ -73,5 +79,6 @@
 			</div>
 		</div>
 		<% end %>
+		More exotic travels
 	</div>
 </div>
