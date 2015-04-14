@@ -1,4 +1,10 @@
 <h1>StepBudget#index</h1>
 <p>Find me in app/views/step_budget/index.html.erb</p>
 
-<%= @local_budget.title %>
+<%= @mychoice.title %>
+<%= for location in @fixed_locations do %>
+<%= location.title %>
+<% end %>
+<br>
+
+<!--<%= @locations.sort_by {|location| location.price}%>
