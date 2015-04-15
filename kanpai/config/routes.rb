@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   get 'step_budget/index'
 
-  resources :line_items
-
-  resources :baskets
-
   get 'step_distance/index'
 
   get 'showroom/index'

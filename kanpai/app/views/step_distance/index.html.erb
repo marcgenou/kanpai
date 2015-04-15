@@ -1,15 +1,5 @@
 <h1><%= @city_name %></h1>
 
-<!-- <h3>Nearby locations</h3>
-<ul>
-<% for location in @locations %>
-  <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> kms)</li>
-<% end %>
-</ul> -->
-<!--<div style="z-index:10000; position:absolute;">
-						<%= button_to 'Keep this one', line_items_path(experience_id: @local_travel), class: "btn btn-lg btn-primary" %>
-						</div>-->
-
 <div class="row">
   <div class="col-xs-6">
 	  <%= link_to @local_travel do %>
@@ -27,7 +17,7 @@
 			</div>
 		</div>
 		<% end %>
-		<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel }%>
+		<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name, :mychoice => @local_travel.distance }%>
 		<br><br>
 		<%= link_to @continental_travel do %>
 		<div class="cuadro_intro_hover">

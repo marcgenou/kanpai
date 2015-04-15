@@ -1,10 +1,75 @@
-<h1>StepBudget#index</h1>
-<p>Find me in app/views/step_budget/index.html.erb</p>
+<h1><%= @city_name %></h1>
 
-<%= @mychoice.title %>
-<%= for location in @fixed_locations do %>
-<%= location.title %>
-<% end %>
-<br>
+<div class="row">
+  <div class="col-xs-6">
+	  <%= link_to @mychoice do %>
+	  <div class="cuadro_intro_hover">
+    <%= image_tag(@mychoice.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @mychoice.title %></h3>
+					<%= @mychoice.description %><br>
+					<%= @mychoice.address %><br>
+					<%= @mychoice_distance.to_f.round(2) %> kms<br>
+					<%= @mychoice_distance_price.round(2) + @mychoice.price %>€					
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<!--<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name }%>-->
+		<br><br>
+	  <%= link_to @medium_travel do %>
+	  <div class="cuadro_intro_hover">
+    <%= image_tag(@medium_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @medium_travel.title %></h3>
+					<%= @medium_travel.description %><br>
+					<%= @medium_travel.address %><br>
+					<%= @medium_travel.distance.round(2) %> kms<br>
+					<%= @medium_distance_price.round(2) + @medium_travel.price %>€					
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<h3>More medium travels</h3>
+	</div>
+  <div class="col-xs-6">
+	  <%= link_to @budget_travel do %>
+	  <div class="cuadro_intro_hover">
+		<%= image_tag(@budget_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @budget_travel.title %></h3>
+					<%= @budget_travel.description %><br>
+					<%= @budget_travel.address %><br>
+					<%= @budget_travel.distance.round(2) %> kms<br>
+					<%= @budget_distance_price.round(2) + @budget_travel.price %>€
+				</div>
+			</div>
+		</div>
+		<% end %>
+		More budget travels
+		<br><br>
+	  <%= link_to @splurge_travel do %>
+		<div class="cuadro_intro_hover">
+		<%= image_tag(@splurge_travel.image_url) %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @splurge_travel.title %></h3>
+					<%= @splurge_travel.description %><br>
+					<%= @splurge_travel.address %><br>
+					<%= @splurge_travel.distance.round(2) %> kms<br>
+					<%= @splurge_distance_price.round(2) + @splurge_travel.price %>€
+				</div>
+			</div>
+		</div>
+		<% end %>
+		More splurge travels
 
-<!--<%= @locations.sort_by {|location| location.price}%>
+	</div>
+</div>

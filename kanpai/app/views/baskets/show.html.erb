@@ -1,8 +1,0 @@
-<p id="notice"><%= notice %></p>
-<ul> 
-<% @basket.line_items.each do |item| %>
- <li> <%= item.experience.title %> </li> 
-<% end %>
-</ul>
-<%= link_to 'Edit', edit_basket_path(@basket) %> |
-<%= link_to 'Back', baskets_path %>

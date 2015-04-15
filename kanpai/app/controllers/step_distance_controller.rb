@@ -7,7 +7,6 @@ class StepDistanceController < ApplicationController
   	else
   		@city_name = params[:city_name]
   	end
-  	@locations = Experience.near(@city_name, 20, :units => :km)
     local = Experience.near(@city_name, 50, :units => :km)
     national = Experience.near(@city_name, 600, :units => :km)
     continental = Experience.near(@city_name, 4000, :units => :km)
