@@ -19,11 +19,11 @@ class StepBudgetController < ApplicationController
 
 		if @distance <= 50
 			@locations = local
-		elsif @distance.between?(50,600)
+		elsif @distance > 50 && @distance <= 600
 			@locations = national
-		elsif @distance.between?(600,4000)
+		elsif @distance > 600 && @distance <= 4000
 			@locations = continental
-		elsif @distance.between?(4000,20000)
+		elsif @distance > 4000 && @distance <= 20000
 			@locations = exotic
 		else
 			p "I don't know how you get there"
@@ -38,9 +38,9 @@ class StepBudgetController < ApplicationController
   	@medium_travel = @locations.in_groups(3, false)[1].sample
   	@splurge_travel = @locations.in_groups(3, false)[2].sample
 
-    @mychoice_distance_price = @mychoice_distance.to_f * 0.55
-    @budget_distance_price = Geocoder::Calculations.distance_between(@city_name, @budget_travel, :units => :km) * 0.11 + 20
-    @medium_distance_price = Geocoder::Calculations.distance_between(@city_name, @medium_travel, :units => :km) * 0.09 +35
-    @splurge_distance_price = Geocoder::Calculations.distance_between(@city_name, @splurge_travel, :units => :km) * 0.07 + 110  	  	
+    @mychoice_distance_price = @mychoice_distance.to_f * params[:multiplier].to_f
+    @budget_distance_price = Geocoder::Calculations.distance_between(@city_name, @budget_travel, :units => :km) * params[:multiplier].to_f
+    @medium_distance_price = Geocoder::Calculations.distance_between(@city_name, @medium_travel, :units => :km) * params[:multiplier].to_f
+    @splurge_distance_price = Geocoder::Calculations.distance_between(@city_name, @splurge_travel, :units => :km) * params[:multiplier].to_f  	  	
   end
 end

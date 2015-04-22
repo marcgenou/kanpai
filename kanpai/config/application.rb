@@ -22,5 +22,11 @@ module Kanpai
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    #Multipliers
+    config.local_travel_multiplier = 0.55
+    config.national_travel_multiplier = 0.13
+    config.continental_travel_multiplier = 0.09
+    config.exotic_travel_multiplier = 0.08
   end
 end

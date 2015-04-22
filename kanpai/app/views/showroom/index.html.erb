@@ -10,15 +10,18 @@
 <% end %>
 </div>
 
-<div class="center jumbotron">
+<!--<div class="center jumbotron">
 
- <h2><%= request.location.address %></h2>
+ <h2>You are in <%= request.location.city %></h2>
 
-</div>
+</div>-->
+<br>
+<h2 style="margin-bottom: 12px;">You are in</h2>
+
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
   <%= form_tag("/step_distance/index", method: :get) do %>
-    <%= text_field_tag :city_name, nil, :class => "form-control", :placeholder => request.location.city %>
+    <%= text_field_tag :city_name, request.location.city, :class => "form-control", :placeholder => request.location.city %>
     <%= submit_tag 'Find experiences', class: "btn btn-lg btn-primary" %>
   <% end %>
 </div>

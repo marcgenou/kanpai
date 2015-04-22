@@ -1,4 +1,4 @@
-<h1><%= @city_name %></h1>
+<h1>From <%= @city_name.capitalize %></h1>
 
 <div class="row">
   <div class="col-xs-6">
@@ -17,8 +17,9 @@
 			</div>
 		</div>
 		<% end %>
+		<h2>Keep my choice</h2>
 		<!--<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name }%>-->
-		<br><br>
+		
 	  <%= link_to @medium_travel do %>
 	  <div class="cuadro_intro_hover">
     <%= image_tag(@medium_travel.image_url) %>
@@ -34,7 +35,7 @@
 			</div>
 		</div>
 		<% end %>
-		<h3>More medium travels</h3>
+		<h2>More medium travels</h2>
 	</div>
   <div class="col-xs-6">
 	  <%= link_to @budget_travel do %>
@@ -52,8 +53,8 @@
 			</div>
 		</div>
 		<% end %>
-		More budget travels
-		<br><br>
+		<h2>More budget travels</h2>
+
 	  <%= link_to @splurge_travel do %>
 		<div class="cuadro_intro_hover">
 		<%= image_tag(@splurge_travel.image_url) %>
@@ -69,7 +70,7 @@
 			</div>
 		</div>
 		<% end %>
-		More splurge travels
+		<h2>More splurge travels</h2>
 
 	</div>
 </div>

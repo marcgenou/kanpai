@@ -1,4 +1,4 @@
-<h1><%= @city_name %></h1>
+<h1>From <%= @city_name.capitalize %></h1>
 
 <div class="row">
   <div class="col-xs-6">
@@ -17,8 +17,8 @@
 			</div>
 		</div>
 		<% end %>
-		<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name, :mychoice => @local_travel.distance }%>
-		<br><br>
+		<h2><%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name, :mychoice => @local_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier }%></h2>
+		
 		<%= link_to @continental_travel do %>
 		<div class="cuadro_intro_hover">
 		<%= image_tag(@continental_travel.image_url) %>
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<% end %>
-		More continental travels
+		<h2><%= link_to "More continental travels", {:controller => "step_budget", :action => "index", :experience => @continental_travel, :city_name => @city_name, :mychoice => @continental_travel.distance, :multiplier => Rails.application.config.continental_travel_multiplier }%></h2>
 	</div>
   <div class="col-xs-6">
 	  <%= link_to @national_travel do %>
@@ -52,8 +52,8 @@
 			</div>
 		</div>
 		<% end %>
-		More national travels
-		<br><br>
+		<h2><%= link_to "More national travels", {:controller => "step_budget", :action => "index", :experience => @national_travel, :city_name => @city_name, :mychoice => @national_travel.distance, :multiplier => Rails.application.config.national_travel_multiplier }%></h2>
+		
 	  <%= link_to @exotic_travel do %>
 		<div class="cuadro_intro_hover">
 		<%= image_tag(@exotic_travel.image_url) %>
@@ -69,6 +69,6 @@
 			</div>
 		</div>
 		<% end %>
-		More exotic travels
+		<h2><%= link_to "More exotic travels", {:controller => "step_budget", :action => "index", :experience => @exotic_travel, :city_name => @city_name, :mychoice => @exotic_travel.distance, :multiplier => Rails.application.config.exotic_travel_multiplier }%></h2>
 	</div>
 </div>
