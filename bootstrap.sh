@@ -17,4 +17,5 @@ bundle install
 #mysql -u root -pkanpai -e "create database kanpai_test CHARACTER SET utf8 COLLATE utf8_general_ci;"
 #mysql -u root -pkanpai -e "create database kanpai_production CHARACTER SET utf8 COLLATE utf8_general_ci;"
 rake db:setup
+rake geocode:all CLASS=Experience SLEEP=0.25 BATCH=100
 #nohup rails server -b 0.0.0.0 &
