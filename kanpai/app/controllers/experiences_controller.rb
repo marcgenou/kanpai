@@ -10,6 +10,8 @@ class ExperiencesController < ApplicationController
   # GET /experiences/1
   # GET /experiences/1.json
   def show
+    @experiences = Experience.all
+    #@locations = Experience.near(@city_name, 20000, :units => :km)
   end
 
   # GET /experiences/new

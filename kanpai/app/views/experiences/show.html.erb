@@ -15,7 +15,7 @@
         <div class="row">
 
             <div class="col-md-8">
-                <%= image_tag(@experience.image_url) %>
+                <%= image_tag(@experience.image_url, :size => "750x500") %>
             </div>
 
             <div class="col-md-4">
@@ -27,6 +27,12 @@
                     <li><%= @experience.duration %></li>
                     <li><%= @experience.tags %></li>
                     <li><%= @experience.address %></li>
+                    <li><%= @experience.category %></li>
+                    <li><%= @experience.season %></li>
+                    <li><%= @experience.date %></li>
+                    <li><%= @experience.duration %></li>
+                    <li><%= @experience.latitude %></li>
+                    <li><%= @experience.longitude %></li>
                     <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=250x150&sensor=false&zoom=16&markers=#{@experience.latitude}%2C#{@experience.longitude}" %>
                 </ul>
             </div>
@@ -41,7 +47,14 @@
                 <h3 class="page-header">Related Experiences</h3>
             </div>
 
-            <div class="col-sm-3 col-xs-6">
+            <% for experience in @experiences.sample(4) %>
+              <div class="col-sm-3 col-xs-6">
+              <%= link_to experience do %>
+              <%= image_tag(experience.image_url, :size => "300x100", class: "img-responsive portfolio-item") %>
+                <% end %>
+              </div>
+            <% end %>
+<!--             <div class="col-sm-3 col-xs-6">
                 <a href="#">
                     <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
@@ -63,7 +76,7 @@
                 <a href="#">
                     <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
-            </div>
+            </div> -->
 
         </div>
         <!-- /.row -->
