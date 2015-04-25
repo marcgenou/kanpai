@@ -10,8 +10,10 @@ class ExperiencesController < ApplicationController
   # GET /experiences/1
   # GET /experiences/1.json
   def show
-    @experiences = Experience.all
-    #@locations = Experience.near(@city_name, 20000, :units => :km)
+    env['HTTP_X_REAL_IP'] = '2.221.182.33' if Rails.env.development?
+    location = request.location
+    #@experiences = Experience.all
+    @experiences = Experience.near(location.city, 600, :units => :km)
   end
 
   # GET /experiences/new

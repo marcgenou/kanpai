@@ -1,6 +1,11 @@
 class StepDistanceController < ApplicationController
   def index
-    @city_name = params[:city_name]
+    env['HTTP_X_REAL_IP'] = '2.221.182.33' if Rails.env.development?
+    if params[:city_name].blank?
+        @city_name = request.location.city
+    else
+        @city_name = params[:city_name]
+    end
 
     local = Experience.near(@city_name, 50, :units => :km)
     national = Experience.near(@city_name, 600, :units => :km)
