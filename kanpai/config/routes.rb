@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'step_category/index'
+
   get 'step_budget/index'
 
   get 'step_distance/index'
