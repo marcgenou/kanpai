@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require owl.carousel
 //= require geocomplete
 //= require turbolinks
 //= require_tree .
