@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<% end %>
-		<h2>More medium travels</h2>
+		<h2><%= link_to "More medium travels", {:controller => "step_category", :action => "index", :experience => @medium_travel, :city_name => @city_name, :mychoice => @medium_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier }%></h2>
 	</div>
   <div class="col-xs-6">
 	  <%= link_to @budget_travel do %>
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<% end %>
-		<h2>More budget travels</h2>
+		<h2><%= link_to "More budget travels", {:controller => "step_category", :action => "index", :experience => @budget_travel, :city_name => @city_name, :mychoice => @budget_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier }%></h2>
 
 	  <%= link_to @splurge_travel do %>
 		<div class="cuadro_intro_hover">
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		<% end %>
-		<h2>More splurge travels</h2>
+		<h2><%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier }%></h2>
 
 	</div>
 </div>
