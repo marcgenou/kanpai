@@ -1,66 +1,70 @@
-    <!-- Page Content -->
+<!-- Intro Header -->
+<header class="intro">
+<style>
+intro {background: url(<%= image_tag(@experience.image_url) %>) no-repeat bottom center scroll}
+</style>
+    <div class="intro-body">
+<!-- Page Content -->
+<!-- Portfolio Item Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header"><%= @experience.title %><br> 
+            <small>Experience</small>
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Portfolio Item Row -->
+<div class="row">
+
+    <div class="col-md-8">
+        <!--<%= image_tag(@experience.image_url) %>-->
+    </div>
+
+    <div class="col-md-4">
+        <h3>Experience Description</h3>
+        <p><%= @experience.description %></p>
+        <h3>Experience Details</h3>
+        <ul>
+            <li><%= @experience.price %>€</li>
+            <li><%= @experience.duration %></li>
+            <li><%= @experience.tags %></li>
+            <li><%= @experience.address %></li>
+            <li><%= @experience.category %></li>
+            <li><%= @experience.season %></li>
+            <li><%= @experience.date %></li>
+            <li><%= @experience.duration %></li>
+            <li><%= @experience.latitude %></li>
+            <li><%= @experience.longitude %></li>
+            <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=275x180&sensor=false&zoom=16&markers=#{@experience.latitude}%2C#{@experience.longitude}" , class: "img-thumbnail" %>
+        </ul>
+    </div>
+
+</div>
+</header>
+<!-- /.row -->
+
+<!-- Related Projects Row -->
+<div class="row">
+
+    <div class="col-lg-12">
+        <h3 class="page-header">Related Experiences</h3>
+    </div>
+    <div class="owl-carousel" align="middle">
+    <% for experience in @experiences %>
+      <div class="col-sm-3 col-xs-6">
+      <%= link_to experience do %>
+      <%= image_tag(experience.image_url, :size => "275x180") %>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+
+</div>
+<!-- /.row -->
+</div>
 
 
-        <!-- Portfolio Item Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"><%= @experience.title %><br> 
-                    <small>Experience</small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Item Row -->
-        <div class="row">
-
-            <div class="col-md-8">
-                <%= image_tag(@experience.image_url, :size => "750x500", class: "img-thumbnail") %>
-            </div>
-
-            <div class="col-md-4">
-                <h3>Experience Description</h3>
-                <p><%= @experience.description %></p>
-                <h3>Experience Details</h3>
-                <ul>
-                    <li><%= @experience.price %>€</li>
-                    <li><%= @experience.duration %></li>
-                    <li><%= @experience.tags %></li>
-                    <li><%= @experience.address %></li>
-                    <li><%= @experience.category %></li>
-                    <li><%= @experience.season %></li>
-                    <li><%= @experience.date %></li>
-                    <li><%= @experience.duration %></li>
-                    <li><%= @experience.latitude %></li>
-                    <li><%= @experience.longitude %></li>
-                    <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=275x180&sensor=false&zoom=16&markers=#{@experience.latitude}%2C#{@experience.longitude}" , class: "img-thumbnail" %>
-                </ul>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-        <!-- Related Projects Row -->
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h3 class="page-header">Related Experiences</h3>
-            </div>
-            <div class="owl-carousel" align="middle">
-            <% for experience in @experiences %>
-              <div class="col-sm-3 col-xs-6">
-              <%= link_to experience do %>
-              <%= image_tag(experience.image_url, :size => "275x180") %>
-                <% end %>
-              </div>
-            <% end %>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-<!--         <hr>
-
-
-<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<!-- <%= link_to 'Edit', edit_experience_path(@experience) %> |
 <%= link_to 'Back', experiences_path %> -->
