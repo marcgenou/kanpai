@@ -6,5 +6,7 @@ class StepCategoryController < ApplicationController
 
 
   	@mychoice_distance_price = @mychoice_distance.to_f * params[:multiplier].to_f
+
+  	#@cultural_travel = Experience.select("category").where(:category => @category)
   end
 end
