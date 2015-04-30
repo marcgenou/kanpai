@@ -7,7 +7,7 @@ apt-get update
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password kanpai'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password kanpai'
 apt-get install -y ruby2.2 ruby2.2-dev curl git libmysqlclient-dev mysql-server nodejs apache2 unoconv
-gem install rails --version 4.2.0 --no-ri --no-rdoc
+gem install rails --version 4.2.1 --no-ri --no-rdoc
 cd /vagrant/kanpai/db
 ./create_seeds
 cd ..
