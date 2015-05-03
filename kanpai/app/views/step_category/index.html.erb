@@ -18,6 +18,16 @@
 		</div>
 		<% end %>
 		<h2>Keep my choice</h2>
+		
+
+
+
+
+		<% for experience in @cultural_travel %> 
+    <%= link_to experience do %>
+    <%= image_tag(experience.image_url) %>
+      <% end %> 
+<% end %>
 
 
 	</div>
