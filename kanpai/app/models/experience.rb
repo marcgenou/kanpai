@@ -5,7 +5,7 @@ class Experience < ActiveRecord::Base
 	validates :image_url, allow_blank: true, format: {with: %r{\.(gif|jpg|png)\Z}i, message: 'must be a URL for gif, jpg or png image.'}
 	#attr_accessible :address, :latitude, :logitude
 	geocoded_by :address
-	after_validation :geocode, :if => :address_changed?
+	after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
 	has_many :line_items
 	before_destroy :ensure_not_referenced_by_any_line_time
