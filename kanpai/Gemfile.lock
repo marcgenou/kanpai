@@ -81,6 +81,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    maxminddb (0.1.7)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -167,6 +168,7 @@ DEPENDENCIES
   geocomplete_rails
   jbuilder (~> 2.0)
   jquery-rails
+  maxminddb
   mysql2
   owlcarousel-rails
   rails (= 4.2.0)
