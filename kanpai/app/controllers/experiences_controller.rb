@@ -14,6 +14,7 @@ class ExperiencesController < ApplicationController
     location = request.location
     #@experiences = Experience.all
     @experiences = Experience.near(location.city, 600, :units => :km)
+    @embed_code = %Q{<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=#{@experience.address}&amp;aq=0&amp;ie=UTF8&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>}.html_safe
   end
 
   # GET /experiences/new
