@@ -31,12 +31,16 @@ class StepBudgetController < ApplicationController
 			
 		#@locations = Experience.near(@mychoice, 50, :units => :km)
 		@locations -= [*@mychoice]
-		@locations = @locations.sort_by {|location| location.price}
+		#@locations = @locations.sort_by {|location| location.price}
 		#@locations.in_groups(3, false)
 
-		@budget_travel = @locations.in_groups(3, false)[0].sample
-  	@medium_travel = @locations.in_groups(3, false)[1].sample
-  	@splurge_travel = @locations.in_groups(3, false)[2].sample
+    @budget_travel = @locations.select{ |location| location.price <= 100 }.sample
+    @medium_travel = @locations.select{ |location| location.price > 100 && location.price <= 1000}.sample
+    @splurge_travel = @locations.select{ |location| location.price > 1000 }.sample
+
+		#@budget_travel = @locations.in_groups(3, false)[0].sample
+  	#@medium_travel = @locations.in_groups(3, false)[1].sample
+  	#@splurge_travel = @locations.in_groups(3, false)[2].sample
 
     @mychoice_distance_price = @mychoice_distance.to_f * params[:multiplier].to_f
     @budget_distance_price = Geocoder::Calculations.distance_between(@city_name, @budget_travel, :units => :km) * params[:multiplier].to_f
