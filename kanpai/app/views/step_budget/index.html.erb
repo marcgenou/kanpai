@@ -1,6 +1,5 @@
-<h1>From <%= @city_name.capitalize %></h1>
-
-<div class="row">
+<!-- <h1>From <%= @city_name.capitalize %></h1>
+ -->
   <div class="col-xs-6">
 	  <%= link_to @mychoice do %>
 	  <div class="cuadro_intro_hover">
@@ -72,4 +71,3 @@
 		<h2><%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier }%></h2>
 
 	</div>
-</div>
