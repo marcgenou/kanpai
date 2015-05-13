@@ -5,7 +5,8 @@
 </style>
     <div class="text-vertical-center">
         <h1><%= @experience.title %></h1>
-        <h3><%= @experience.description %></h3>
+        <h3><%= @experience.description.truncate(40, separator: /\s/) %></h3>
+        <h3><%= @experience.address.titleize %></h3>
         <br>
         <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
     </div>
@@ -37,7 +38,7 @@
                     <% for experience in @experiences.sample(4) %>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
-                                <%= image_tag(experience.image_url, :size => "112x80") %>
+                                <%= image_tag(experience.image_url, :size => "200x140") %>
                                 <h4><strong><%= experience.title.truncate(20, separator: /\s/) %></strong></h4>
                                 <p><%= experience.description.truncate(30, separator: /\s/) %></p>
                                 <%= link_to "Learn More", experience, class: "btn btn-light" %>
