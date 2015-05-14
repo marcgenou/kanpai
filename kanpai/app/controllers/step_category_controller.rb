@@ -48,14 +48,13 @@ class StepCategoryController < ApplicationController
 			p "I don't know how you get there"
 		end
 
-    @cultural_travel = @locations.select{ |location| location.category == @mychoice.category }.sample(3)
-    #@leisure_travel = @locations.select{ |location| location.category = "leisure" }.sample
-    #@sport_travel = @locations.select{ |location| location.category = "sport" }.sample
-    #@food_travel = @locations.select{ |location| location.category = "food" }.sample
-    #@adventure_travel = @locations.select{ |location| location.category = "adventure" }.sample
-    #@volunteering_travel = @locations.select{ |location| location.category = "volunteering" }.sample
-    #@nature_travel = @locations.select{ |location| location.category = "nature" }.sample
+    @mychoice_category = @locations.select{ |location| location.category == @mychoice.category }.sample
+    @first_category = @locations.select{ |location| location.category != @mychoice.category }.sample
+    @second_category = @locations.select{ |location| location.category != @mychoice.category and location.category != @first_category.category }.sample
+    @third_category = @locations.select{ |location| location.category != @mychoice.category and location.category != @first_category.category and location.category != @second_category.category }.sample
 
-  	#@cultural_travel = Experience.select("category").where(:category => @category)
+    @first_category_distance_price = Geocoder::Calculations.distance_between(@city_name, @first_category, :units => :km) * params[:multiplier].to_f
+    @second_category_distance_price = Geocoder::Calculations.distance_between(@city_name, @second_category, :units => :km) * params[:multiplier].to_f
+    @third_category_distance_price = Geocoder::Calculations.distance_between(@city_name, @third_category, :units => :km) * params[:multiplier].to_f
   end
 end

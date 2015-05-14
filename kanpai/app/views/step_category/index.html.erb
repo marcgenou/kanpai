@@ -1,7 +1,6 @@
 <!-- <h1>From <%= @city_name.capitalize %></h1>
  -->
-  <div class="col-xs-6">
-	  <%= link_to @mychoice do %>
+  <div class="col-xs-6" style="padding-left: 0px;padding-right: 0px;" >
 	  <div class="cuadro_intro_hover">
     <%= image_tag(@mychoice.image_url, :height => "500px", :width => "100%") %>
 			<div class="caption">
@@ -11,22 +10,64 @@
 					<%= @mychoice.description %><br>
 					<%= @mychoice.address %><br>
 					<%= @mychoice_distance.to_f.round(2) %> kms<br>
-					<%= @mychoice_distance_price.round(2) + @mychoice.price %>€					
+					<%= @mychoice_distance_price.round(2) + @mychoice.price %>€<br><br>
+					<%= link_to "Learn More about this", @mychoice, class:"btn btn-dark btn-lg" %>
+					<%= link_to "More travels like this", @mychoice, class:"btn btn-dark btn-lg" %>
 				</div>
 			</div>
 		</div>
-		<% end %>
-		<h2>Keep my choice</h2>
 		
+	  <div class="cuadro_intro_hover">
+    <%= image_tag(@first_category.image_url, :height => "500px", :width => "100%") %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @first_category.title %></h3>
+					<%= @first_category.description %><br>
+					<%= @first_category.address %><br>
+					<%= @first_category.distance.to_f.round(2) %> kms<br>
+					<%= @first_category_distance_price.round(2) + @first_category.price %>€<br><br>
+					<%= link_to "Learn More about this", @first_category, class:"btn btn-dark btn-lg" %>
+					<%= link_to "More travels like this", @first_category, class:"btn btn-dark btn-lg" %>		
+				</div>
+			</div>
+		</div>
+	</div>
 
+  <div class="col-xs-6" style="padding-left: 0px;padding-right: 0px;" >
+	  <div class="cuadro_intro_hover">
+    <%= image_tag(@second_category.image_url, :height => "500px", :width => "100%") %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @second_category.title %></h3>
+					<%= @second_category.description %><br>
+					<%= @second_category.address %><br>
+					<%= @second_category.distance.to_f.round(2) %> kms<br>
+					<%= @second_category_distance_price.round(2) + @second_category.price %>€€<br><br>
+					<%= link_to "Learn More about this", @second_category, class:"btn btn-dark btn-lg" %>
+					<%= link_to "More travels like this", @second_category, class:"btn btn-dark btn-lg" %>					
+				</div>
+			</div>
+		</div>
 
+		
+	  <div class="cuadro_intro_hover">
+    <%= image_tag(@third_category.image_url, :height => "500px", :width => "100%") %>
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h3 style="padding:10px;"><%= p @third_category.title %></h3>
+					<%= @third_category.description %><br>
+					<%= @third_category.address %><br>
+					<%= @third_category.distance.to_f.round(2) %> kms<br>
+					<%= @third_category_distance_price.round(2) + @third_category.price %>€€<br><br>
+					<%= link_to "Learn More about this", @third_category, class:"btn btn-dark btn-lg" %>
+					<%= link_to "More travels like this", @third_category, class:"btn btn-dark btn-lg" %>					
+				</div>
+			</div>
+		</div>
 
-
-		<% for experience in @cultural_travel %> 
-    <%= link_to experience do %>
-    <%= image_tag(experience.image_url) %>
-      <% end %> 
-<% end %>
 
 
 	</div>
