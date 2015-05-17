@@ -243,27 +243,29 @@ footer {
     padding: 20px 0;
 }
 
+/* Cuadro */
+
 .cuadro_intro_hover{
         padding: 0px;
     position: relative;
     overflow: hidden;
-    height: 450px;
+    height: 250px;
     width: 100%;
   }
   .cuadro_intro_hover:hover .caption{
     opacity: 1;
-    transform: translateY(-400px);
-    -webkit-transform:translateY(-400px);
-    -moz-transform:translateY(-400px);
-    -ms-transform:translateY(-400px);
-    -o-transform:translateY(-400px);
+    transform: translateY(-200px);
+    -webkit-transform:translateY(-200px);
+    -moz-transform:translateY(-200px);
+    -ms-transform:translateY(-200px);
+    -o-transform:translateY(-200px);
   }
   .cuadro_intro_hover img{
     z-index: 4;
   }
   .cuadro_intro_hover .caption{
     position: absolute;
-    top:400px;
+    top:200px;
     -webkit-transition:all 0.3s ease-in-out;
     -moz-transition:all 0.3s ease-in-out;
     -o-transition:all 0.3s ease-in-out;
@@ -273,7 +275,7 @@ footer {
   }
   .cuadro_intro_hover .blur{
     background-color: rgba(0,0,0,0.7);
-    height: 500px;
+    height: 300px;
     z-index: 5;
     position: absolute;
     width: 100%;
@@ -282,11 +284,13 @@ footer {
     z-index: 10;
     color: #fff;
     position: absolute;
-    height: 500px;
+    height: 300px;
     text-align: center;
     top:-20px;
     width: 100%;
   }
+
+/* Back button */
 
 #back-button {
     z-index: 1;
