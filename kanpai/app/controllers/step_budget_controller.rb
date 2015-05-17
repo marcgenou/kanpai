@@ -3,6 +3,7 @@ class StepBudgetController < ApplicationController
   	@city_name = params[:city_name]
   	@mychoice = Experience.find(params[:experience])
   	@mychoice_distance = params[:mychoice]
+    @multiplier = params[:multiplier]
 
     local = Experience.near(@city_name, 50, :units => :km)
     national = Experience.near(@city_name, 600, :units => :km)
@@ -39,8 +40,8 @@ class StepBudgetController < ApplicationController
     @splurge_travel = @locations.select{ |location| location.price > 1000 }.sample
 
     @mychoice_distance_price = @mychoice_distance.to_f * params[:multiplier].to_f
-    @budget_distance_price = Geocoder::Calculations.distance_between(@city_name, @budget_travel, :units => :km) * params[:multiplier].to_f
-    @medium_distance_price = Geocoder::Calculations.distance_between(@city_name, @medium_travel, :units => :km) * params[:multiplier].to_f
-    @splurge_distance_price = Geocoder::Calculations.distance_between(@city_name, @splurge_travel, :units => :km) * params[:multiplier].to_f  	  	
+    @budget_distance_price = Geocoder::Calculations.distance_between(@city_name, @budget_travel, :units => :km) * @multiplier.to_f
+    @medium_distance_price = Geocoder::Calculations.distance_between(@city_name, @medium_travel, :units => :km) * @multiplier.to_f
+    @splurge_distance_price = Geocoder::Calculations.distance_between(@city_name, @splurge_travel, :units => :km) * @multiplier.to_f  	  	
   end
 end

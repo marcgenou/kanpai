@@ -105,7 +105,7 @@ php5enmod mcrypt > /dev/null 2>&1
 echo -e "\n--- Restarting Apache ---\n"
 service apache2 restart > /dev/null 2>&1
 
-echo -e "\n--- Installing Rails 4.2.0 ---\n"
+echo -e "\n--- Installing Rails 4.2.1 ---\n"
 gem install rails --version 4.2.1 --no-ri --no-rdoc > /dev/null 2>&1
 
 echo -e "\n--- Running bundle install ---\n"
