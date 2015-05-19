@@ -19,6 +19,7 @@
             <div class="col-lg-12 text-center">
                 <h2><%= @experience.title %></h2>
                 <p class="lead"></a><%= @experience.description %></p>
+                <p class="lead"></a>The Baltic Sea route measures 800 km and offers an amazingly beautiful cycling route. You will experience some of Denmark’s most beautiful sceneries from fjords in the west through the island scenery by Funen to the open landscape in Lolland-Falster and the amazing white cliffs at Møn. Taking this special cycling route you will always be close to the sea, changing between idyllic islands, small boat crossings and wonderful cities. You can rest assured that taking the Baltic Sea route you will be spoilt for choice when it comes to nature and beautiful landscapes. Doing the Baltic Sea route will give you an experience for life.</p>
             </div>
         </div>
         <!-- /.row -->
@@ -58,10 +59,11 @@
     <!-- Callout -->
     <aside class="callout">
     <style>
-     .callout { background-image: url(<%= image_path(@experience.image_url) %>); }
+/*     .callout { background-image: url(<%= image_path(@experience.image_url) %>); }*/
+     .callout { background-image: url(../assets/photos/exp50-2.jpeg); }
     </style>
-        <div class="text-vertical-center">
-            <h1><%= @experience.category %></h1>
+        <div class="col-md-3 col-md-offset-3">
+            <h3><i><br><br>Trained cyclists not accompanied by small children may be able to do the 800 km long route in a couple of weeks. However, you might choose to divide the trip  into two – giving you the chance to come back again next year.</i></h3>
         </div>
     </aside>
 
@@ -76,34 +78,34 @@
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="http://placehold.it/350x250">
+                                    <img class="img-portfolio img-responsive" src="../assets/photos/exp50-1.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="http://placehold.it/350x250">
+                                    <img class="img-portfolio img-responsive" src="../assets/photos/exp50-2.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="http://placehold.it/350x250">
+                                    <img class="img-portfolio img-responsive" src="../assets/photos/exp50-3.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="http://placehold.it/350x250">
+                                    <img class="img-portfolio img-responsive" src="../assets/photos/exp50-4.jpg">
                                 </a>
                             </div>
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
+ <!--                    <a href="#" class="btn btn-dark">View More Items</a> -->
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -116,10 +118,16 @@
     <aside class="call-to-action">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                <div class="text-center col-md-6 col-md-offset-3">
+                    <h3>19 stages through beautiful landscapes</h3>
+                    <h4 style="line-height:25px;"><p>The Baltic Sea route is divided into 19 stages following, where possible, the clearly marked national, regional and local cycling routes. You can start The Baltic Sea route anywhere along the route as you like. Going by the book you should start at the German border in South Jutland and cycle along the route until you’re back where you started. But you are free to begin the trip anywhere you feel like. Most stages are 40 to 50 km, some even 60 km. But it will not feel that long, as you will be met by beautiful sights, castles, parks and museums, where you can learn more about the local history.</p>
+
+<p>The lovely ferry trips across the sea south of Fyn, where islands lay scattered like beads on a string, offers a welcoming break.</p> 
+
+<p>Literally, going by the book refers to an excellent book on cycling the Baltic Sea route, that will fit into the map pocket of a bike frame pannier. It gives you detailed road maps with cycling routes and descriptions of landscapes and sights. There’s also a guide to hotels, inns, hostels, camping areas, B&Bs, ferries, bike repair shops and much more</p></h4>
+<script type="text/javascript" src="http://static.whitelabel.dohop.com/js/iframe.js?wl=test8984902&a1=MAD&a2=CPH&d1=2015-06-13&d2=2015-06-19"></script>
+                    <a href="#" class="btn btn-lg btn-light">Contact providers</a>
+                    <a href="#" class="btn btn-lg btn-dark">More info</a>
                 </div>
             </div>
         </div>
