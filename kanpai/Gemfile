@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-#gem "font-awesome-rails"
+gem 'countries'
+gem "font-awesome-rails"
 gem "gretel"
 gem 'jquery-turbolinks'
 gem 'maxminddb'
