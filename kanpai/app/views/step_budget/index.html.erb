@@ -71,3 +71,4 @@
 		<h2><%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => @multiplier }%></h2>
 
 	</div>
+	<% breadcrumb :step_budget, params[:controller] %>

@@ -70,3 +70,4 @@
 		<% end %>
 		<h2><%= link_to "More exotic travels", {:controller => "step_budget", :action => "index", :experience => @exotic_travel, :city_name => @city_name, :mychoice => @exotic_travel.distance, :multiplier => Rails.application.config.exotic_travel_multiplier }%></h2>
 	</div>
+<% breadcrumb :step_distance, params[:controller] %>

@@ -12,6 +12,7 @@
   <body>
     <%= render 'layouts/header' %>
     <%= yield %>
+    <%= breadcrumbs pretext: "You are here: ", display_single_fragment: true %>
     <%= render 'layouts/footer' %>
   </body>
 </html>
