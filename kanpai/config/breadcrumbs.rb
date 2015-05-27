@@ -8,13 +8,18 @@ crumb :experience do |experience|
 end
 
 crumb :step_distance do |step_distance|
-  link step_distance, step_distance
+  link "Distance", step_distance_index_path
   parent :root
 end
 
 crumb :step_budget do |step_budget|
-  link step_budget, step_budget
+  link "Budget", step_budget_index_path
   parent :step_distance
+end
+
+crumb :step_category do |step_category|
+  link "Category", step_category_index_path
+  parent :step_budget
 end
 
 # crumb :projects do

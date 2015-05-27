@@ -1,74 +1,93 @@
-<!-- <h1>From <%= @city_name.capitalize %></h1>
- -->
-  <div class="col-xs-6">
-	  <%= link_to @mychoice do %>
-	  <div class="cuadro_intro_hover">
-    <%= image_tag(@mychoice.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @mychoice.title %></h3>
-					<%= @mychoice.description %><br>
-					<%= @mychoice.address %><br>
-					<%= @mychoice_distance.to_f.round(2) %> kms<br>
-					<%= @mychoice_distance_price.round(2) + @mychoice.price %>€					
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @mychoice, :city_name => @city_name, :mychoice => @mychoice_distance, :multiplier => @multiplier }%></h2>
-				
-	  <%= link_to @medium_travel do %>
-	  <div class="cuadro_intro_hover">
-    <%= image_tag(@medium_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @medium_travel.title %></h3>
-					<%= @medium_travel.description %><br>
-					<%= @medium_travel.address %><br>
-					<%= @medium_travel.distance.round(2) %> kms<br>
-					<%= @medium_distance_price.round(2) + @medium_travel.price %>€					
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More medium travels", {:controller => "step_category", :action => "index", :experience => @medium_travel, :city_name => @city_name, :mychoice => @medium_travel.distance, :multiplier => @multiplier }%></h2>
-	</div>
-  <div class="col-xs-6">
-	  <%= link_to @budget_travel do %>
-	  <div class="cuadro_intro_hover">
-		<%= image_tag(@budget_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @budget_travel.title %></h3>
-					<%= @budget_travel.description %><br>
-					<%= @budget_travel.address %><br>
-					<%= @budget_travel.distance.round(2) %> kms<br>
-					<%= @budget_distance_price.round(2) + @budget_travel.price %>€
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More budget travels", {:controller => "step_category", :action => "index", :experience => @budget_travel, :city_name => @city_name, :mychoice => @budget_travel.distance, :multiplier => @multiplier }%></h2>
-
-	  <%= link_to @splurge_travel do %>
-		<div class="cuadro_intro_hover">
-		<%= image_tag(@splurge_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @splurge_travel.title %></h3>
-					<%= @splurge_travel.description %><br>
-					<%= @splurge_travel.address %><br>
-					<%= @splurge_travel.distance.round(2) %> kms<br>
-					<%= @splurge_distance_price.round(2) + @splurge_travel.price %>€
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => @multiplier }%></h2>
-
-	</div>
-	<% breadcrumb :step_budget, params[:controller] %>
+<!-- Portfolio -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>From <%= @city_name.capitalize %></h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@mychoice.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @mychoice.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @mychoice.description.truncate(30, separator: /\s/) %><br>
+																		<%= @mychoice.address %><br>
+																		<%= @mychoice_distance.to_f.round(2) %> kms<br>
+																		<%= @mychoice_distance_price.round(2) + @mychoice.price %>€<br><br>
+																		<center><%= link_to "Learn More", @mychoice, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+																		<%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @mychoice, :city_name => @city_name, :mychoice => @mychoice_distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@medium_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @medium_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @medium_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @medium_travel.address %><br>
+																		<%= @medium_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @medium_distance_price.round(2) + @medium_travel.price %>€<br><br>
+																		<center><%= link_to "Learn More", @medium_travel, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+																		<%= link_to "More medium travels", {:controller => "step_category", :action => "index", :experience => @medium_travel, :city_name => @city_name, :mychoice => @medium_travel.distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@budget_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @budget_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @budget_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @budget_travel.address %><br>
+																		<%= @budget_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @budget_distance_price.round(2) + @budget_travel.price %>€<br><br>
+																		<center><%= link_to "Learn More", @budget_travel, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+																		<%= link_to "More budget travels", {:controller => "step_category", :action => "index", :experience => @budget_travel, :city_name => @city_name, :mychoice => @budget_travel.distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@splurge_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @splurge_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @splurge_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @splurge_travel.address %><br>
+																		<%= @splurge_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @splurge_distance_price.round(2) + @splurge_travel.price %>€<br><br>
+																		<center><%= link_to "Learn More", @splurge_travel, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+																		<%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<% breadcrumb :step_budget, params[:controller] %>

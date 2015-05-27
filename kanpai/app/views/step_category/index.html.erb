@@ -55,7 +55,7 @@
 																		<%= @second_category.description.truncate(30, separator: /\s/) %><br>
 																		<%= @second_category.address %><br>
 																		<%= @second_category.distance.to_f.round(2) %> kms<br>
-																		<%= @second_category_distance_price.round(2) + @mychoice.price %>€<br><br>
+																		<%= @second_category_distance_price.round(2) + @second_category.price %>€<br><br>
 																		<center><%= link_to "Learn More", @second_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
 																		<%= link_to "More travels like this", @second_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
@@ -74,7 +74,7 @@
 																		<%= @third_category.description.truncate(30, separator: /\s/) %><br>
 																		<%= @third_category.address %><br>
 																		<%= @third_category.distance.to_f.round(2) %> kms<br>
-																		<%= @third_category_distance_price.round(2) + @mychoice.price %>€<br><br>
+																		<%= @third_category_distance_price.round(2) + @third_category.price %>€<br><br>
 																		<center><%= link_to "Learn More", @third_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
 																		<%= link_to "More travels like this", @third_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
@@ -90,3 +90,4 @@
     </div>
     <!-- /.container -->
 </section>
+<% breadcrumb :step_category, params[:controller] %>
