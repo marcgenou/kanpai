@@ -75,6 +75,9 @@ GEM
       activesupport (>= 4.1.0)
     gretel (3.0.8)
       rails (>= 3.2.0)
+    gretel-trails (0.0.5)
+      gretel (>= 3.0.0.beta6)
+      rails (>= 3.2.0)
     hike (1.2.3)
     i18n (0.7.0)
     i18n_data (0.7.0)
@@ -181,6 +184,7 @@ DEPENDENCIES
   geocoder
   geocomplete_rails
   gretel
+  gretel-trails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks

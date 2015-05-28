@@ -18,8 +18,9 @@
 																		<%= @mychoice.address %><br>
 																		<%= @mychoice_distance.to_f.round(2) %> kms<br>
 																		<%= @mychoice_distance_price.round(2) + @mychoice.price %>€<br><br>
-																		<center><%= link_to "Learn More", @mychoice, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More travels like this", @mychoice, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_category %>
+                                		<%= link_to "Learn More", experience_path(@mychoice, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @mychoice, :city_name => @city_name, :mychoice => @mychoice_distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -37,8 +38,9 @@
 																		<%= @first_category.address %><br>
 																		<%= @first_category.distance.to_f.round(2) %> kms<br>
 																		<%= @first_category_distance_price.round(2) + @first_category.price %>€<br><br>
-																		<center><%= link_to "Learn More", @first_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More travels like this", @first_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_category %>
+                                		<%= link_to "Learn More", experience_path(@first_category, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @first_category, :city_name => @city_name, :mychoice => @first_category.distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -56,8 +58,9 @@
 																		<%= @second_category.address %><br>
 																		<%= @second_category.distance.to_f.round(2) %> kms<br>
 																		<%= @second_category_distance_price.round(2) + @second_category.price %>€<br><br>
-																		<center><%= link_to "Learn More", @second_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More travels like this", @second_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_category %>
+                                		<%= link_to "Learn More", experience_path(@second_category, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @second_category, :city_name => @city_name, :mychoice => @second_category.distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -75,8 +78,9 @@
 																		<%= @third_category.address %><br>
 																		<%= @third_category.distance.to_f.round(2) %> kms<br>
 																		<%= @third_category_distance_price.round(2) + @third_category.price %>€<br><br>
-																		<center><%= link_to "Learn More", @third_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More travels like this", @third_category, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_category %>
+                                		<%= link_to "Learn More", experience_path(@third_category, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @third_category, :city_name => @city_name, :mychoice => @third_category.distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -90,4 +94,3 @@
     </div>
     <!-- /.container -->
 </section>
-<% breadcrumb :step_category, params[:controller] %>

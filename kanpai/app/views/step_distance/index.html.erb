@@ -1,73 +1,97 @@
-<!-- <h1>From <%= @city_name.capitalize %></h1>
- -->
-  <div class="col-xs-6">
-	  <%= link_to @local_travel do %>
-	  <div class="cuadro_intro_hover">
-    <%= image_tag(@local_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @local_travel.title %></h3>
-					<%= @local_travel.description %><br>
-					<%= @local_travel.address %><br>
-					<%= @local_travel.distance.round(2) %> kms<br>
-					<%= @local_distance_price.round(2) + @local_travel.price %>€					
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name, :mychoice => @local_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier }%></h2>
-		
-		<%= link_to @continental_travel do %>
-		<div class="cuadro_intro_hover">
-		<%= image_tag(@continental_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @continental_travel.title %></h3>
-					<%= @continental_travel.description %><br>
-					<%= @continental_travel.address %><br>
-					<%= @continental_travel.distance.round(2) %> kms<br>
-					<%= @continental_distance_price.round(2) + @continental_travel.price %>€
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More continental travels", {:controller => "step_budget", :action => "index", :experience => @continental_travel, :city_name => @city_name, :mychoice => @continental_travel.distance, :multiplier => Rails.application.config.continental_travel_multiplier }%></h2>
-	</div>
-  <div class="col-xs-6">
-	  <%= link_to @national_travel do %>
-	  <div class="cuadro_intro_hover">
-		<%= image_tag(@national_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @national_travel.title %></h3>
-					<%= @national_travel.description %><br>
-					<%= @national_travel.address %><br>
-					<%= @national_travel.distance.round(2) %> kms<br>
-					<%= @national_distance_price.round(2) + @national_travel.price %>€
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More national travels", {:controller => "step_budget", :action => "index", :experience => @national_travel, :city_name => @city_name, :mychoice => @national_travel.distance, :multiplier => Rails.application.config.national_travel_multiplier }%></h2>
-		
-	  <%= link_to @exotic_travel do %>
-		<div class="cuadro_intro_hover">
-		<%= image_tag(@exotic_travel.image_url, :height => "500px", :width => "100%") %>
-			<div class="caption">
-				<div class="blur"></div>
-				<div class="caption-text">
-					<h3 style="padding:10px;"><%= p @exotic_travel.title %></h3>
-					<%= @exotic_travel.description %><br>
-					<%= @exotic_travel.address %><br>
-					<%= @exotic_travel.distance.round(2) %> kms<br>
-					<%= @exotic_distance_price.round(2) + @exotic_travel.price %>€
-				</div>
-			</div>
-		</div>
-		<% end %>
-		<h2><%= link_to "More exotic travels", {:controller => "step_budget", :action => "index", :experience => @exotic_travel, :city_name => @city_name, :mychoice => @exotic_travel.distance, :multiplier => Rails.application.config.exotic_travel_multiplier }%></h2>
-	</div>
-<% breadcrumb :step_distance, params[:controller] %>
+<!-- Portfolio -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>From <%= @city_name.capitalize %></h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@local_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @local_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @local_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @local_travel.address %><br>
+																		<%= @local_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @local_distance_price.round(2) + @local_travel.price %>€<br><br>
+																		<center>
+                                		<% breadcrumb :step_distance %>
+                                		<%= link_to "Learn More", experience_path(@local_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More local travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name, :mychoice => @local_travel.distance, :multiplier => Rails.application.config.local_travel_multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@national_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @national_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @national_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @national_travel.address %><br>
+																		<%= @national_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @national_distance_price.round(2) + @national_travel.price %>€<br><br>
+																		<center><% breadcrumb :step_distance %>
+                                		<%= link_to "Learn More", experience_path(@national_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More national travels", {:controller => "step_budget", :action => "index", :experience => @local_travel, :city_name => @city_name, :mychoice => @national_travel.distance, :multiplier => Rails.application.config.national_travel_multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@continental_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @continental_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @continental_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @continental_travel.address %><br>
+																		<%= @continental_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @continental_distance_price.round(2) + @continental_travel.price %>€<br><br>
+																		<center><% breadcrumb :step_distance %>
+                                		<%= link_to "Learn More", experience_path(@continental_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More continental travels", {:controller => "step_budget", :action => "index", :experience => @continental_travel, :city_name => @city_name, :mychoice => @continental_travel.distance, :multiplier => Rails.application.config.continental_travel_multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@exotic_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @exotic_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @exotic_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @exotic_travel.address %><br>
+																		<%= @exotic_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @exotic_distance_price.round(2) + @exotic_travel.price %>€<br><br>
+																		<center><% breadcrumb :step_distance %>
+                                		<%= link_to "Learn More", experience_path(@exotic_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More exotic travels", {:controller => "step_budget", :action => "index", :experience => @exotic_travel, :city_name => @city_name, :mychoice => @exotic_travel.distance, :multiplier => Rails.application.config.exotic_travel_multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>

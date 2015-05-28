@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'countries'
 gem "font-awesome-rails"
 gem "gretel"
+gem "gretel-trails"
 gem 'jquery-turbolinks'
 gem 'maxminddb'
 gem 'owlcarousel-rails'

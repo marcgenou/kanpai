@@ -18,27 +18,9 @@
 																		<%= @mychoice.address %><br>
 																		<%= @mychoice_distance.to_f.round(2) %> kms<br>
 																		<%= @mychoice_distance_price.round(2) + @mychoice.price %>€<br><br>
-																		<center><%= link_to "Learn More", @mychoice, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @mychoice, :city_name => @city_name, :mychoice => @mychoice_distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
-																	</div>
-																</div>
-															</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
-															 <%= image_tag(@medium_travel.image_url, :height => "300px", :width => "100%") %>
-																<div class="caption">
-																	<div class="blur"></div>
-																	<div class="caption-text">
-																		<h3 style="padding:10px;"><%= p @medium_travel.title.truncate(20, separator: /\s/) %></h3>
-																		<%= @medium_travel.description.truncate(30, separator: /\s/) %><br>
-																		<%= @medium_travel.address %><br>
-																		<%= @medium_travel.distance.to_f.round(2) %> kms<br>
-																		<%= @medium_distance_price.round(2) + @medium_travel.price %>€<br><br>
-																		<center><%= link_to "Learn More", @medium_travel, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More medium travels", {:controller => "step_category", :action => "index", :experience => @medium_travel, :city_name => @city_name, :mychoice => @medium_travel.distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_budget %>
+                                		<%= link_to "Learn More", experience_path(@mychoice, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More like this", {:controller => "step_category", :action => "index", :experience => @mychoice, :city_name => @city_name, :mychoice => @mychoice_distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -56,8 +38,29 @@
 																		<%= @budget_travel.address %><br>
 																		<%= @budget_travel.distance.to_f.round(2) %> kms<br>
 																		<%= @budget_distance_price.round(2) + @budget_travel.price %>€<br><br>
-																		<center><%= link_to "Learn More", @budget_travel, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More budget travels", {:controller => "step_category", :action => "index", :experience => @budget_travel, :city_name => @city_name, :mychoice => @budget_travel.distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_budget %>
+                                		<%= link_to "Learn More", experience_path(@budget_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More budget travels", {:controller => "step_category", :action => "index", :experience => @budget_travel, :city_name => @city_name, :mychoice => @budget_travel.distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																	</div>
+																</div>
+															</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                        		  <div class="cuadro_intro_hover img-portfolio img-responsive">
+															 <%= image_tag(@medium_travel.image_url, :height => "300px", :width => "100%") %>
+																<div class="caption">
+																	<div class="blur"></div>
+																	<div class="caption-text">
+																		<h3 style="padding:10px;"><%= p @medium_travel.title.truncate(20, separator: /\s/) %></h3>
+																		<%= @medium_travel.description.truncate(30, separator: /\s/) %><br>
+																		<%= @medium_travel.address %><br>
+																		<%= @medium_travel.distance.to_f.round(2) %> kms<br>
+																		<%= @medium_distance_price.round(2) + @medium_travel.price %>€<br><br>
+																		<center><% breadcrumb :step_budget %>
+                                		<%= link_to "Learn More", experience_path(@medium_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More medium travels", {:controller => "step_category", :action => "index", :experience => @medium_travel, :city_name => @city_name, :mychoice => @medium_travel.distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -75,8 +78,9 @@
 																		<%= @splurge_travel.address %><br>
 																		<%= @splurge_travel.distance.to_f.round(2) %> kms<br>
 																		<%= @splurge_distance_price.round(2) + @splurge_travel.price %>€<br><br>
-																		<center><%= link_to "Learn More", @splurge_travel, class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
-																		<%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => @multiplier }, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
+																		<center><% breadcrumb :step_budget %>
+                                		<%= link_to "Learn More", experience_path(@splurge_travel, trail: breadcrumb_trail), class:"btn btn-dark btn-lg", style: "margin: 2px;" %>
+                                		<%= link_to "More splurge travels", {:controller => "step_category", :action => "index", :experience => @splurge_travel, :city_name => @city_name, :mychoice => @splurge_travel.distance, :multiplier => @multiplier, trail: breadcrumb_trail}, class:"btn btn-dark btn-lg", style: "margin: 2px;" %></center>
 																	</div>
 																</div>
 															</div>
@@ -90,4 +94,3 @@
     </div>
     <!-- /.container -->
 </section>
-<% breadcrumb :step_budget, params[:controller] %>

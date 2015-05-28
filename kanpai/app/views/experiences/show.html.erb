@@ -42,7 +42,8 @@
                                 <%= image_tag(experience.image_url, :size => "200x140") %>
                                 <h4><strong><%= experience.title.truncate(20, separator: /\s/) %></strong></h4>
                                 <p><%= experience.description.truncate(30, separator: /\s/) %></p>
-                                <%= link_to "Learn More", experience, class: "btn btn-light" %>
+                                <% breadcrumb @experience %>
+                                <%= link_to "Learn More", experience_path(experience, trail: breadcrumb_trail), class: "btn btn-light" %>
                             </div>
                         </div>
                     <% end %>
@@ -137,7 +138,7 @@
     <section id="contact" class="map">
     <%= @embed_code %>
     </section>
-<% breadcrumb @experience %>
+
 <!-- Portfolio Item Row -->
 <!-- <div class="row">
 <%= image_tag(@experience.image_url) %>

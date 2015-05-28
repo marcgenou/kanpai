@@ -3,10 +3,10 @@
  <% end %> 
  <div id="example" class= "tiles"> 
  
-<% for experience in @experiences.sample(20) %> 
-    <%= link_to experience do %>
-    <%= image_tag(experience.image_url) %>
-      <% end %> 
+<% for experience in @experiences.sample(20) %>
+	<%= link_to experience_path(experience, trail: breadcrumb_trail) do %>
+  <%= image_tag(experience.image_url) %>
+    <% end %> 
 <% end %>
 </div>
 
@@ -23,8 +23,3 @@
     <br><center><%= submit_tag 'Find experiences', class: "btn btn-lg btn-primary" %></center>
   <% end %>
 </div>
-      <% breadcrumb :root %>
-
-
-
-
